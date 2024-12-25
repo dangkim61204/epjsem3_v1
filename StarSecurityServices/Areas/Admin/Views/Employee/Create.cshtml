@@ -1,0 +1,194 @@
+﻿@model Data_DAL.Entities.Employee
+
+@{
+    ViewData["Title"] = "Employee | Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h1>Create Employee</h1>
+
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card">
+          
+
+            <div class="card-body">
+               
+                <div class="live-preview">
+                    <form asp-action="Create" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label asp-for="Name" class="form-label"></label>
+                                    <input asp-for="Name" type="text" class="form-control" placeholder="Enter your FullName">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Username" class="form-label"></label>
+                                    <input asp-for="Username" type="text" class="form-control" placeholder="UserName">
+                                    <span asp-validation-for="Username" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Password" class="form-label"></label>
+                                    <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                           
+                    
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label asp-for="Avata" class="control-label"></label>
+                                    <input asp-for="Avata" type="file" name="filePicture" class="form-control" />
+                                    <span class="text-danger"></span>
+                                    <span style="color:red;">@ViewBag.msg</span>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Phone" class="form-label"></label>
+                                    <input asp-for="Phone" type="text" class="form-control" placeholder="+(83) 1451 45123">
+                                    <span asp-validation-for="Phone" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Email" class="form-label"></label>
+                                    <input  asp-for="Email" type="email" class="form-control" placeholder="example@gamil.com" >
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label asp-for="Address" class="form-label"></label>
+                                    <input asp-for="Address" type="text" class="form-control" placeholder="Address ">
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <label asp-for="Grade" class="form-label"></label>
+                                    <input asp-for="Grade" type="text" class="form-control" placeholder="Grade ">
+                                    <span asp-validation-for="Grade" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Education" class="form-label"></label>
+                                    <input asp-for="Education" type="text" class="form-control" placeholder="Education">
+                                    <span asp-validation-for="Education" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Achievements" class="form-label"></label>
+                                    <input asp-for="Achievements" type="text" class="form-control" placeholder="Achievements">
+                                    <span asp-validation-for="Achievements" class="text-danger"></span>
+                                 
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="DepartmentId" class="form-label"></label>
+                                   
+                                    <select asp-for="DepartmentId" class="form-control" asp-items="ViewBag.dep"></select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="RoleId" class="form-label"></label>
+
+                                    <select asp-for="RoleId" class="form-control" asp-items="ViewBag.role"></select>
+                                </div>
+                            </div>
+                            <!--end col-->
+                            <div class="col-lg-12">
+                                <div class="text-end">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                            <!--end col-->
+                        </div>
+                        <!--end row-->
+                    </form>
+                </div>
+                <div class="d-none code-view">
+                    <pre class="language-markup" style="height: 375px;">
+<code>&lt;form action=&quot;javascript:void(0);&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-6&quot;&gt;
+            &lt;div class=&quot;mb-3&quot;&gt;
+                &lt;label for=&quot;firstNameinput&quot; class=&quot;form-label&quot;&gt;First Name&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Enter your firstname&quot; id=&quot;firstNameinput&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!--end col--&gt;
+        &lt;div class=&quot;col-6&quot;&gt;
+            &lt;div class=&quot;mb-3&quot;&gt;
+                &lt;label for=&quot;lastNameinput&quot; class=&quot;form-label&quot;&gt;Last Name&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Enter your lastname&quot; id=&quot;lastNameinput&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!--end col--&gt;
+        &lt;div class=&quot;col-12&quot;&gt;
+            &lt;div class=&quot;mb-3&quot;&gt;
+                &lt;label for=&quot;compnayNameinput&quot; class=&quot;form-label&quot;&gt;Company Name&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Enter company name&quot; id=&quot;compnayNameinput&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!--end col--&gt;
+        &lt;div class=&quot;col-6&quot;&gt;
+            &lt;div class=&quot;mb-3&quot;&gt;
+                &lt;label for=&quot;phonenumberInput&quot; class=&quot;form-label&quot;&gt;Phone Number&lt;/label&gt;
+                &lt;input type=&quot;tel&quot; class=&quot;form-control&quot; placeholder=&quot;+(245) 451 45123&quot; id=&quot;phonenumberInput&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!--end col--&gt;
+        &lt;div class=&quot;col-6&quot;&gt;
+            &lt;div class=&quot;mb-3&quot;&gt;
+                &lt;label for=&quot;emailidInput&quot; class=&quot;form-label&quot;&gt;Email Address&lt;/label&gt;
+                &lt;input type=&quot;email&quot; class=&quot;form-control&quot; placeholder=&quot;example@gamil.com&quot; id=&quot;emailidInput&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!--end col--&gt;
+        &lt;div class=&quot;col-12&quot;&gt;
+            &lt;div class=&quot;mb-3&quot;&gt;
+                &lt;label for=&quot;address1ControlTextarea&quot; class=&quot;form-label&quot;&gt;Address&lt;/label&gt;
+                &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Address 1&quot; id=&quot;address1ControlTextarea&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!--end col--&gt;
+        &lt;div class=&quot;col-6&quot;&gt;
+            &lt;div class=&quot;mb-3&quot;&gt;
+                &lt;label for=&quot;citynameInput&quot; class=&quot;form-label&quot;&gt;City&lt;/label&gt;
+                &lt;input type=&quot;email&quot; class=&quot;form-control&quot; placeholder=&quot;Enter your city&quot; id=&quot;citynameInput&quot;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!--end col--&gt;
+        &lt;div class=&quot;col-6&quot;&gt;
+            &lt;div class=&quot;mb-3&quot;&gt;
+                &lt;label for=&quot;ForminputState&quot; class=&quot;form-label&quot;&gt;State&lt;/label&gt;
+                &lt;select id=&quot;ForminputState&quot; class=&quot;form-select&quot;&gt;
+                    &lt;option selected&gt;Choose...&lt;/option&gt;
+                    &lt;option&gt;...&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!--end col--&gt;
+        &lt;div class=&quot;col-lg-12&quot;&gt;
+            &lt;div class=&quot;text-end&quot;&gt;
+                &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!--end col--&gt;
+    &lt;/div&gt;&lt;!--end row--&gt;
+&lt;/form&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end col -->
+
+    
+</div>
+

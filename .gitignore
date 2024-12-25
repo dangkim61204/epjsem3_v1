@@ -1,0 +1,44 @@
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]ist/
+[Dd]istPublic/
+[Rr]eleases/
+x64/
+x86/
+[Aa]rchive/
+
+## Uncomment if you have tasks that create project's static files
+#wwwroot/
+
+## User-specific files
+.idea/
+.vscode/
+.vs/
+.vs2019/
+.vs2017/
+.DS_Store
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+## Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## NuGet
+# Ignore packages folder
+/packages/
+
+# Ignore the project-specific NuGet config
+.nuget/
+
+# Windows Installer files
+*.nupkg

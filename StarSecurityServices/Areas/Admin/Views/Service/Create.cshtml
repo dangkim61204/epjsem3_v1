@@ -1,0 +1,52 @@
+﻿@model Data_DAL.Entities.Service
+
+@{
+    ViewData["Title"] = "Service | Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Create Service</h1>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label asp-for="ServiceName" class="form-label"></label>
+                        <input asp-for="ServiceName" type="text" class="form-control" placeholder="ServiceName...">
+                        <span asp-validation-for="ServiceName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="mb-3">
+                            <label asp-for="Description" class="form-label"></label>
+                            <textarea id="editor1" asp-for="Description" class="form-control" placeholder="Description..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <!--end col-->
+                </div>
+                <!--end row-->
+            
+        </form>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        CKEDITOR.replace('editor1');
+    </script>
+}

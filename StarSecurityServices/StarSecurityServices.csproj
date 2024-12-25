@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\Data\**" />
+    <Compile Remove="Areas\Admin\Models\**" />
+    <Compile Remove="wwwroot\assets\**" />
+    <Content Remove="Areas\Admin\Data\**" />
+    <Content Remove="Areas\Admin\Models\**" />
+    <Content Remove="wwwroot\assets\**" />
+    <EmbeddedResource Remove="Areas\Admin\Data\**" />
+    <EmbeddedResource Remove="Areas\Admin\Models\**" />
+    <EmbeddedResource Remove="wwwroot\assets\**" />
+    <None Remove="Areas\Admin\Data\**" />
+    <None Remove="Areas\Admin\Models\**" />
+    <None Remove="wwwroot\assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Business_BLL\Business_BLL.csproj" />
+    <ProjectReference Include="..\Data_DAL\Data_DAL.csproj" />
+  </ItemGroup>
+
+</Project>
